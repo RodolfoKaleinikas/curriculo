@@ -81,6 +81,6 @@ $('.mobile-btn').click(function() {
 
   $(document).scroll(debounce(function() {
     animeScroll();
-  }, 100));
+  }, 10));
 })();
 
