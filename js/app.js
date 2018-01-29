@@ -1,4 +1,3 @@
-
 // Animação Scroll da página
 
 $(function () {
@@ -42,27 +41,26 @@ $('.mobile-btn').click(function() {
 // Animação do Scroll
 
 
-function() {
-  var $target = $('[data-anime="scroll"]');
-  var animationClass = 'animate';
-  var offset = $(window).height() * 3/4;
+var $target = $('[data-anime="scroll"]');
+var animationClass = 'animate';
+var offset = $(window).height() * 3/4;
 
-  function animeScroll() {
-    var documentTop = $(window).scrollTop();
+function animeScroll() {
+  var documentTop = $(window).scrollTop();
 
-    $target.each(function() {
-      var itemTop = $(this).offset().top;
-      if (documentTop > itemTop - offset) {
-        $(this).addClass(animationClass);
-      } else {
-        $(this).removeClass(animationClass);
-      }
-    });
-  }
-
-  animeScroll();
-
-  $(document).scroll(function() {
-    animeScroll();
+  $target.each(function() {
+    var itemTop = $(this).offset().top;
+    if (documentTop > itemTop - offset) {
+      $(this).addClass(animationClass);
+    } else {
+      $(this).removeClass(animationClass);
+    }
   });
+}
+
+animeScroll();
+
+$(document).scroll(function() {
+  animeScroll();
+});
 
