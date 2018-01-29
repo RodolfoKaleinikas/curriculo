@@ -1,20 +1,3 @@
-// Debounce 
-
-debounce = function(func, wait, immediate) {
-	var timeout;
-	return function() {
-		var context = this, args = arguments;
-		var later = function() {
-			timeout = null;
-			if (!immediate) func.apply(context, args);
-		};
-		var callNow = immediate && !timeout;
-		clearTimeout(timeout);
-		timeout = setTimeout(later, wait);
-		if (callNow) func.apply(context, args);
-	};
-};
-
 
 // Animação Scroll da página
 
@@ -59,7 +42,7 @@ $('.mobile-btn').click(function() {
 // Animação do Scroll
 
 
-(function() {
+function() {
   var $target = $('[data-anime="scroll"]');
   var animationClass = 'animate';
   var offset = $(window).height() * 3/4;
@@ -79,8 +62,7 @@ $('.mobile-btn').click(function() {
 
   animeScroll();
 
-  $(document).scroll(debounce(function() {
+  $(document).scroll(function() {
     animeScroll();
-  }, 10));
-})();
+  });
 
