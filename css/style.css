@@ -189,6 +189,10 @@ h1 {
   border: none;
 }
 
+.navbar-toggler:focus {
+  outline: none;
+}
+
 .mobile-btn {
   display: block;
   color: white;
